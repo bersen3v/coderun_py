@@ -1,31 +1,3 @@
-# n = int(input())
-# graph : dict[int, list]= {}
-# for i in range(n):
-#     stroka = list(map(int, input().split()))
-#     graph[i] = [i for i in range(n) if stroka[i] == 1]
-# start, end = list(map(int, input().split()))
-
-# answer = []
-
-# def bfs(start: int, end: int, fromNode: int = -1, seen: list = []):
-#     if start in seen:
-#         return
-    
-#     if start==end:
-#         answer.append(len(seen))
-    
-#     seen.append(start)
-    
-#     for node in graph[start]:
-#         if node!=fromNode:
-#             bfs(start=node, end=end, fromNode=start, seen=list(seen.copy()))
-
-# bfs(start=start-1, end=end-1, seen=[])
-# if answer != []:
-#     print(min(answer))
-# else:
-#     print(-1)
-
 def get_vertex(gr,v,chk):
     res=[]
     for a in gr[v]:
@@ -84,8 +56,11 @@ def get_graph():
     return res
  
 def show_path(pth):
-    print(pth)
-    print(len(pth[0]))   
+    print(pth[1])
+    if pth[1]!=0:
+        for pair in pth[0]:
+            print(pair[0]+1,end=' ')
+        print(pair[1]+1)    
         
     
 def search(graph,start,finish):
